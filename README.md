@@ -1,1 +1,1 @@
-# cc
+# repo for competative coding
