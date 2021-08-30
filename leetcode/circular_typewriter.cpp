@@ -34,4 +34,4 @@ public:
         ans = min(s-f, (f-97)+(122-s)+1);
         return ans;
     }
-};
+};  
