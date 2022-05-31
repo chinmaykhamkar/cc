@@ -3,6 +3,7 @@ public:
     int lengthOfLastWord(string s) {
         int counter=0,i=0;
         if(s.size()==0){
+            
             return 0;
         }
         

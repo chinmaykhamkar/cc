@@ -9,6 +9,7 @@ public:
                 i++;
                 j++;
                 
+                
             }
             else if(j!=0 && typed[j] == typed[j-1]){
                 j++;
