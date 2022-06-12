@@ -4,8 +4,7 @@ public:
         
         unordered_map<string,vector<string>> op;
         vector<vector<string>> t;
-        int i;
-        
+        int i;        
         for(i=0;i<strs.size();i++){
             string temp = strs[i];
             sort(strs[i].begin(),strs[i].end());
