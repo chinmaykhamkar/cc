@@ -27,3 +27,44 @@ public:
         return *max_element(count.begin(),count.end());
     }
 };
+
+// optimal sol
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int ans = 0;
+        int left = 0,right = 0;
+        vector<int> store(256,-1);
+        int n = s.size();
+        while(right<n){
+            
+            if(store[s[right]] != -1){
+                left = max(store[s[right]]+1,left);
+            }
+            
+            store[s[right]] = right;
+            ans = max(ans,right-left+1);
+            right++;
+        }
+        
+        return ans;
+        
+//         int ans=0;
+//         int left=0,right;
+//         unordered_set<int> set;
+//         int n = s.size();
+//         for(right=0;right<n;right++){
+//             if(set.find(s[right]) != set.end()){
+//                 while(left<right && set.find(s[right]) != set.end()){
+//                     set.erase(s[left]);
+//                     left++;
+//                 }
+                    
+//             }
+//             set.insert(s[right]);
+//             ans = max(ans,right-left+1);
+//         }
+        
+//         return ans;
+    }
+};
