@@ -34,3 +34,19 @@ public:
         
     }
 };
+
+//better approach
+ if(head == NULL){
+            return head;
+        }
+        
+        ListNode* curr;
+        ListNode* prev = NULL;
+        while(head){
+            curr = head->next;
+            head->next = prev;
+            prev = head;
+            head = curr;
+        }
+        
+        return prev;
