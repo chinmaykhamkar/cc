@@ -67,3 +67,55 @@ public:
     }
     
  };
+
+ //better aporach
+ class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        
+        if(list1== NULL && list2 == NULL) return NULL;
+        if(list1==NULL) return list2;
+        if(list2==NULL) return list1;
+        
+        ListNode* curr=NULL;
+        ListNode* head = NULL;
+        if(list1->val < list2->val){
+            curr = list1;
+            head = list1;
+            list1=list1->next;
+        }
+        else{
+            curr = list2;
+            head = list2;
+            list2=list2->next;
+        }
+        
+        
+        while(list1 && list2){
+            if(list1->val<list2->val){
+                curr->next = list1;
+                curr = curr->next;
+                list1 = list1->next;
+            }
+            else{
+                curr->next = list2;
+                curr = curr->next;
+                list2 = list2->next;
+            }
+        }
+        
+        while(list1){
+            curr->next = list1;
+            curr = curr->next;
+            list1 = list1->next;
+        }
+        while(list2){
+            curr->next = list2;
+            curr = curr->next;
+            list2 = list2->next;
+        }
+        
+        
+        return head;
+        
+    }
