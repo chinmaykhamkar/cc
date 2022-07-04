@@ -18,3 +18,14 @@ public:
         return ans;
     }
 };
+
+//better sol
+int sum = 0;
+        int i,n=nums.size();
+        int fsum = 0;
+        for(i=0;i<=n;i++){
+            fsum+=i;
+        }
+        for(i=0;i<n;i++){
+            sum+=nums[i];
+        }
