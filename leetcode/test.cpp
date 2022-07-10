@@ -54,10 +54,7 @@ while(getline(cin,line)){
 Solution ob;
 string f;
 f=ob.check(ans);
-
-cout<<f;
-
-   
+cout<<f;   
 return 0;
 }
 // steps to run c++ code
