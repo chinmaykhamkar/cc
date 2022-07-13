@@ -4,39 +4,32 @@
 #include<bits/stdc++.h>
 using namespace std;
   
-class Solution{
-     public:
-     string check(string ans){
-        stack<char> st;
-        string final;
-        st.push('s');
-        int i,n=ans.size();
-        for(i=0;i<n;i++){
-            if(ans[i]=='['||ans[i]==']'||ans[i]=='('||ans[i]==')'||ans[i]=='{'||ans[i]=='}'){
-                char temp = st.top();
-                st.push(ans[i]);
 
-                if(temp == '[' && st.top() == ']'){
-                        st.pop();
-                        st.pop();
-                }
-                if(temp == '{' && st.top() == '}'){
-                        st.pop();
-                        st.pop();
-                }
-                if(temp == '(' && st.top() == ')'){
-                        st.pop();
-                        st.pop();
-                }
-            }
+
+
+int main()
+{
+    int a, b, c, d;
+    a = 1;
+    b = 2;
+    c = 3;
+    d = 6;
+    while (c > a || d > b) {
+        if (c > d) {
+            c -= d;
+            if (c < a) cout <<  "No" ;
         }
+        else {
+            d -= c;
+            if (d < b) cout <<  "No" ;
+ }
+    }
+    if (a == c && b == d) cout <<  "Yes" ;
+    else  cout<<"No" ;
+    
 
-        if(st.top() == 's') final = "valid";
-        else final = "invalid";
-
-        return final;
-     }
-};
+    return 0;
+}
 
 // Driver Code
 int main()
