@@ -41,3 +41,34 @@ public:
     
     
 };
+
+//method 2
+ int i;
+        int x=0;
+        for(i=0;i<s.size();i++){
+            if(s[i] == '#'){
+                x--;
+                x=max(x,0);
+            }
+            else{
+                s[x]=s[i];
+                x++;
+            }
+        }
+        int y=0;
+        for(i=0;i<t.size();i++){
+            if(t[i] == '#'){
+                y--;
+                y=max(y,0);
+            }
+            else{
+                s[y]=s[i];
+                y++;
+            }
+        }
+        if(x!=y) return false;
+        for(i=0;i<x;i++){
+            if(s[x]!=t[x]) return false;
+        }
+        
+        return true;
