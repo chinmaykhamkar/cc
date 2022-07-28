@@ -34,20 +34,25 @@ int main()
 // Driver Code
 int main()
 {
-//
-string line;
-string ans;
-while(getline(cin,line)){
-        if(line.empty()){
-            break;
-        }
-        ans+=line;
-}
 
-Solution ob;
-string f;
-f=ob.check(ans);
-cout<<f;   
+
+
+
+    
+//
+// string line;
+// string ans;
+// while(getline(cin,line)){
+//         if(line.empty()){
+//             break;
+//         }
+//         ans+=line;
+// }
+
+// Solution ob;
+// string f;
+// f=ob.check(ans);
+// cout<<f;   
 return 0;
 }
 // steps to run c++ code
