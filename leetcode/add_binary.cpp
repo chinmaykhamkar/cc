@@ -70,3 +70,42 @@ public:
         return output;
     }
 };
+
+// add binary
+class Solution {
+public:
+    string addBinary(string a, string b) {
+        int carry=0;
+        //a=1010
+        //b=10
+        int i=a.size(); //4
+        int j=b.size(); //2
+        reverse(a.begin(),a.end());
+        reverse(b.begin(),b.end());
+        //a=0101
+        //b=01
+       
+        int k;
+        string ans="";
+        
+        for(k=0;k<max(i,j);k++){
+            string f,s;
+            (k>=i)?(f='0'):(f=a[k]);
+            (k>=j)?(s='0'):(s=b[k]);
+            // cout<<k<<"-"<<f<<" "<<s<<endl;
+            int sum = stoi(f)+stoi(s)+carry;
+            ans+=to_string(sum%2);
+            carry=sum/2;
+            
+        }
+        
+        if(carry){
+            ans+=to_string(carry);
+        }
+        reverse(ans.begin(),ans.end());
+        
+        
+        return ans;
+        
+    }
+};
