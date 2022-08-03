@@ -25,3 +25,34 @@ public:
     }  
     
 };
+
+//extra space arroach
+class Solution {
+public:
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> ans;
+        vector<int> store;
+        int n=nums.size();
+        vector<int> map (n,0);
+        
+        helper(ans,store,nums,map);
+        return ans;
+    }
+    
+    void helper(vector<vector<int>>& ans,vector<int>& store,vector<int>& nums,vector<int> &map){
+        if(store.size() == nums.size()){
+            ans.push_back(store);
+            return;
+        }
+        
+        for(int i=0;i<nums.size();i++){
+            if(!map[i]){
+                map[i] = 1;
+                store.push_back(nums[i]);
+                helper(ans,store,nums,map);
+                map[i] = 0;
+                store.pop_back();
+            }
+        }
+    }
+};
