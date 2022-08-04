@@ -56,3 +56,5 @@ public:
         }
     }
 };
+
+// when numbers are unique
