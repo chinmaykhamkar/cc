@@ -15,3 +15,19 @@ public:
         return dp;
     }
 };
+
+// m2
+      vector<int> ans;
+        int i;
+        for(i=0;i<=n;i++){
+            int sum = 0;
+            int num = i;
+            while(num){
+                sum+=num%2;
+                num=num/2;
+            }
+            ans.push_back(sum);
+        }
+        
+        return ans;
+        
