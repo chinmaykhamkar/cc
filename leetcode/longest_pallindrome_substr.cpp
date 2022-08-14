@@ -12,7 +12,7 @@ public:
         for(i=0;i<n;i++){
             dp[i][i] = true;
             for(j=0;j<i;j++){
-                if(s[i] == s[j] && (i-j<2 || dp[j+1][i-1])){
+                if(s[i] == s[j] && (i-j<=2 || dp[j+1][i-1])){
                     dp[j][i] = true;
                     if(i-j+1>maxx){
                         maxx = i-j+1;
